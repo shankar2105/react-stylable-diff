@@ -30,6 +30,9 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "babel": "^5.1.10"
-  }
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  },
+  "false": {}
 }

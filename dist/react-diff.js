@@ -1,6 +1,5 @@
-'use strict';
-
 var React = require('react');
+var PropTypes = require('prop-types');
 var jsdiff = require('diff');
 
 var fnMap = {
@@ -24,7 +23,7 @@ var fnMap = {
 module.exports = React.createClass({
   displayName: 'Diff',
 
-  getDefaultProps: function getDefaultProps() {
+  getDefaultProps: function () {
     return {
       inputA: '',
       inputB: '',
@@ -34,13 +33,13 @@ module.exports = React.createClass({
   },
 
   propTypes: {
-    inputA: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),
-    inputB: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),
-    type: React.PropTypes.oneOf(['chars', 'words', 'sentences', 'json']),
-    className: React.PropTypes.string
+    inputA: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    inputB: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    type: PropTypes.oneOf(['chars', 'words', 'sentences', 'json']),
+    className: PropTypes.string
   },
 
-  render: function render() {
+  render: function () {
     var diff = fnMap[this.props.type](this.props.inputA, this.props.inputB);
 
     var result = diff.map(function (part, index) {
